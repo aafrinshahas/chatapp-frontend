@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import { baseUrl } from "../Url";
 
 function Login(){
 const [user, setUser] = useState('');
@@ -15,7 +15,7 @@ const navigate = useNavigate();
   return;
 }
 try {
- const res = await axios.post('http://localhost:5000/join', { name: user, room: room });
+ const res = await axios.post(`${baseUrl}/join`, { name: user, room: room });
 console.log(res.data)
 if(res.data == 'success'){
   console.log('go to chat')

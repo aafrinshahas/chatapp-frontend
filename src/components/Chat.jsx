@@ -3,6 +3,7 @@
     import { useState } from "react";
     import { Link } from "react-router-dom";
     import Totalchats from "./Totalchats";
+    import { baseUrl } from "../Url";
 import axios from "axios";
    
 
@@ -23,7 +24,7 @@ import axios from "axios";
     setSidebar(!sideBar)
     }
 
-    const backendUrl = 'http://localhost:5000'
+    const backendUrl = baseUrl
     useEffect(()=>{
     const search = window.location.search;
     const params = new URLSearchParams(search);
@@ -68,7 +69,7 @@ import axios from "axios";
     
         try {
           // Send message to server via Axios POST request
-          await axios.post('http://localhost:5000/message', { message : message });
+          await axios.post(`${baseUrl}/message`, { message : message });
     
           // Emit message to socket.io server (assuming socket is initialized elsewhere)
           socket.emit('sendMsg', message, () => setMessage(''));
