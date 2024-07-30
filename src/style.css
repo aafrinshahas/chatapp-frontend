@@ -1,0 +1,133 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body{
+background: #1B1E21;
+}
+
+/*================LOGIN==================*/
+.login{
+width: 50%;
+margin: 0 auto;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/*===================CHAT===============*/
+.chat{
+display: flex;
+justify-content: space-between;
+height: 100vh;
+padding: 3%;
+flex-wrap: wrap;
+gap: 40px;
+}
+
+/*=============DASHBOARD============*/
+.dashboard{
+width: 25%;
+background: #202427;
+overflow-y: scroll;
+height: 100%;
+position: relative;
+}
+
+/*============SIDE===============*/
+.side{
+top: 0;
+left: 0;
+width: 55%;
+position: fixed;
+z-index: 1000;
+left: -100%;
+transition: 850ms;
+background: #202427;
+height: 100vh;
+overflow-y: scroll;
+}
+
+.side.active{
+left: 0;
+transition: 350ms;
+}
+
+/*============LOGO===========*/
+.logo{
+position: sticky;
+top: 0px;
+background: #1B1E21;
+}
+
+/*=============LOGOUT============*/
+.logout{
+position: sticky;
+bottom: 0;
+z-index: 1;
+background: #1B1E21;
+}
+
+/*=============CONVERSATION============*/
+.conversation{
+width: 70%;
+background: #282E31;
+height: 100%;
+overflow-y: auto;
+}
+
+/*=============HEADER=============*/
+.header{
+position: sticky;
+top: 0px;
+z-index: 156;
+}
+
+/*============MESSAGES==========*/
+.messages{
+z-index: 150;
+height: 100%;
+position: relative;
+}
+
+.message-left{
+text-align: right;
+width: 55%;
+overflow-y: auto;
+}
+
+.message-right{
+width: 55%;
+overflow-y: auto;
+}
+
+/*==========WRITE MESSAGES*/
+.write-message{
+position: sticky;
+bottom: 0px;
+}
+
+@media only screen and (min-width: 769px){
+
+.mobile-view{
+display: none;
+}
+}
+
+@media only screen and (max-width: 850px) {
+.dashboard{
+display: none;
+
+}
+.mobile-view{
+display: block;
+
+}
+.login{
+width: 80%;
+}
+
+}
